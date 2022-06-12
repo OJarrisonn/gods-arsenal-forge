@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "godsarsenal:block/deepslate_cobalt_ore"
+  }
+}
