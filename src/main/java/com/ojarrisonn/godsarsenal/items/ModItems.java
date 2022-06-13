@@ -1,8 +1,6 @@
 package com.ojarrisonn.godsarsenal.items;
 
-import com.ojarrisonn.godsarsenal.armors.ModArmorItem;
-import com.ojarrisonn.godsarsenal.armors.ModArmorMaterials;
-import com.ojarrisonn.godsarsenal.armors.WindSpiritArmorItem;
+import com.ojarrisonn.godsarsenal.armors.*;
 import com.ojarrisonn.godsarsenal.blocks.ModBlocks;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.BlockItem;
@@ -36,39 +34,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> UNDEAD_HELMET = ITEMS.register(
             "undead_helmet",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.UNDEAD,
-                    EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new UndeadArmorItem(EquipmentSlot.HEAD)
     );
     public static final RegistryObject<Item> UNDEAD_CHESTPLATE = ITEMS.register(
             "undead_chestplate",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.UNDEAD,
-                    EquipmentSlot.CHEST,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new UndeadArmorItem(EquipmentSlot.CHEST)
     );
     public static final RegistryObject<Item> UNDEAD_LEGGINGS = ITEMS.register(
             "undead_leggings",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.UNDEAD,
-                    EquipmentSlot.LEGS,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new UndeadArmorItem(EquipmentSlot.LEGS)
     );
     public static final RegistryObject<Item> UNDEAD_BOOTS = ITEMS.register(
             "undead_boots",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.UNDEAD,
-                    EquipmentSlot.FEET,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new UndeadArmorItem(EquipmentSlot.FEET)
     );
 
     public static final RegistryObject<Item> WIND_SPIRIT_HELMET = ITEMS.register(
@@ -127,39 +105,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> GUARDIAN_HELMET = ITEMS.register(
             "guardian_helmet",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.GUARDIAN,
-                    EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new GuardianArmorItem(EquipmentSlot.HEAD)
     );
     public static final RegistryObject<Item> GUARDIAN_CHESTPLATE = ITEMS.register(
             "guardian_chestplate",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.GUARDIAN,
-                    EquipmentSlot.CHEST,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new GuardianArmorItem(EquipmentSlot.CHEST)
     );
     public static final RegistryObject<Item> GUARDIAN_LEGGINGS = ITEMS.register(
             "guardian_leggings",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.GUARDIAN,
-                    EquipmentSlot.LEGS,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new GuardianArmorItem(EquipmentSlot.LEGS)
     );
     public static final RegistryObject<Item> GUARDIAN_BOOTS = ITEMS.register(
             "guardian_boots",
-            () -> new ModArmorItem(
-                    ModArmorMaterials.GUARDIAN,
-                    EquipmentSlot.FEET,
-                    new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB),
-                    true
-            )
+            () -> new GuardianArmorItem(EquipmentSlot.FEET)
     );
 
     public static void register (IEventBus bus) {

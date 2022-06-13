@@ -1,19 +1,18 @@
 package com.ojarrisonn.godsarsenal.armors;
 
-import com.ojarrisonn.godsarsenal.GodsArsenal;
 import com.ojarrisonn.godsarsenal.items.ModItemTabs;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class WindSpiritArmorItem extends ArmorItem {
-    private static boolean falling = false;
-
-    public WindSpiritArmorItem(EquipmentSlot slot) {
-        super(ModArmorMaterials.WIND_SPIRIT, slot, new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB));
+public class UndeadArmorItem extends ArmorItem {
+    public UndeadArmorItem(EquipmentSlot slot) {
+        super(ModArmorMaterials.UNDEAD, slot, new Properties().tab(ModItemTabs.GODS_ARSENAL_TAB));
     }
 
     @Override
@@ -21,6 +20,7 @@ public class WindSpiritArmorItem extends ArmorItem {
         if(!world.isClientSide()) {
             if(hasFullSuitOfArmorOn(player)) {
                 addStatusEffect(player);
+                player.setArrowCount(0);
             }
         }
     }
@@ -32,14 +32,14 @@ public class WindSpiritArmorItem extends ArmorItem {
 
     private void addStatusEffect(Player player) {
         if(hasCorrectArmorOn(player)) {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 6, false, false));
-            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 100, 3, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 4, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 9, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 100, 1, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 0, false, false));
+            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 100, 0, false, false));
 
-            if (player.fallDistance >= 4f) falling = true;
-            if (player.isOnGround()) falling = false;
-
-            if (falling) {
-                player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 0, false, false));
+            if (!player.hasEffect(MobEffects.ABSORPTION)) {
+                player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 160, 4, false, false));
             }
         }
     }
@@ -59,7 +59,7 @@ public class WindSpiritArmorItem extends ArmorItem {
         ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
         ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == ModArmorMaterials.WIND_SPIRIT && breastplate.getMaterial() == ModArmorMaterials.WIND_SPIRIT &&
-                leggings.getMaterial() == ModArmorMaterials.WIND_SPIRIT && boots.getMaterial() == ModArmorMaterials.WIND_SPIRIT;
+        return helmet.getMaterial() == ModArmorMaterials.UNDEAD && breastplate.getMaterial() == ModArmorMaterials.UNDEAD &&
+                leggings.getMaterial() == ModArmorMaterials.UNDEAD && boots.getMaterial() == ModArmorMaterials.UNDEAD;
     }
 }

@@ -17,17 +17,9 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private final boolean UNBREAKABLE;
 
-    private static final List<MobEffectInstance> UNDEAD_EFFECTS = new ArrayList<>();
-    private static final List<MobEffectInstance> GUARDIAN_EFFECTS = new ArrayList<>();
     private static final List<MobEffectInstance> ANCIENT_WOOD_EFFECTS = new ArrayList<>();
 
     static {
-        UNDEAD_EFFECTS.add(new MobEffectInstance(MobEffects.ABSORPTION, 100, 4, false, false));
-        UNDEAD_EFFECTS.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 4, false, false));
-        UNDEAD_EFFECTS.add(new MobEffectInstance(MobEffects.REGENERATION, 100, 4, false, false));
-        GUARDIAN_EFFECTS.add(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 2, false, false));
-        GUARDIAN_EFFECTS.add(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 100, 9, false, false));
-        GUARDIAN_EFFECTS.add(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 0, false, false));
         ANCIENT_WOOD_EFFECTS.add(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false));
         ANCIENT_WOOD_EFFECTS.add(new MobEffectInstance(MobEffects.REGENERATION, 100, 4, false, false));
     }
@@ -35,10 +27,7 @@ public class ModArmorItem extends ArmorItem {
 
     private static final Map<ArmorMaterial, List<MobEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, List<MobEffectInstance>>())
-                    .put(ModArmorMaterials.UNDEAD, UNDEAD_EFFECTS)
-                    .put(ModArmorMaterials.WIND_SPIRIT, GUARDIAN_EFFECTS)
                     .put(ModArmorMaterials.ANCIENT_WOOD, ANCIENT_WOOD_EFFECTS)
-                    .put(ModArmorMaterials.GUARDIAN, GUARDIAN_EFFECTS)
                     .build();
 
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings, boolean unbreakable) {
