@@ -16,6 +16,10 @@ import static com.ojarrisonn.godsarsenal.GodsArsenal.MOD_ID;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
+    /**********************
+    * BLOCK ITEMS SECTION *
+    ***********************/
+
     public static final RegistryObject<Item> HELLS_FORGE = ITEMS.register(
             "hells_forge",
             () -> new BlockItem(
@@ -31,6 +35,10 @@ public class ModItems {
                     new Item.Properties().tab(ModItemTabs.GODS_ARSENAL_TAB)
             )
     );
+
+    /******************
+     * ARMORS SECTION *
+     ******************/
 
     public static final RegistryObject<Item> UNDEAD_HELMET = ITEMS.register(
             "undead_helmet",
@@ -119,6 +127,42 @@ public class ModItems {
             "guardian_boots",
             () -> new GuardianArmorItem(EquipmentSlot.FEET)
     );
+    
+    public static final RegistryObject<Item> AUREA_HELMET = ITEMS.register(
+            "aurea_helmet",
+            () -> new AureaArmorItem(EquipmentSlot.HEAD)
+    );
+    public static final RegistryObject<Item> AUREA_CHESTPLATE = ITEMS.register(
+            "aurea_chestplate",
+            () -> new AureaArmorItem(EquipmentSlot.CHEST)
+    );
+    public static final RegistryObject<Item> AUREA_LEGGINGS = ITEMS.register(
+            "aurea_leggings",
+            () -> new AureaArmorItem(EquipmentSlot.LEGS)
+    );
+    public static final RegistryObject<Item> AUREA_BOOTS = ITEMS.register(
+            "aurea_boots",
+            () -> new AureaArmorItem(EquipmentSlot.FEET)
+    );
+
+    /******************
+    * WEAPONS SECTION *
+    *******************/
+
+    public static final RegistryObject<Item> UNDEAD_BLADE = ITEMS.register(
+            "undead_blade",
+            UndeadBlade::new
+    );
+
+    /*********************
+     * ARTIFACTS SECTION *
+     *********************/
+
+    public static final RegistryObject<Item> MJOLNIR = ITEMS.register(
+            "mjolnir",
+            Mjolnir::new
+    );
+
 
     public static void register (IEventBus bus) {
         ITEMS.register(bus);

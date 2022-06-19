@@ -1,7 +1,8 @@
 {
-  "item.godsarsenal.raw_cobalt": "Raw Cobalt",
-  "item.godsarsenal.undead_helmet": "Helmet of The Undead",
-
-  "block.godsarsenal.raw_cobalt_block": "Raw Cobalt Block",
-  "block.godsarsenal.deepslate_cobalt_ore": "Deepslate Cobalt Ore"
+  "item.godsarsenal.undead_helmet": "Helmet of The Undeads",
+  "item.godsarsenal.undead_chestplate": "Chestplate of The Undeads",
+  "item.godsarsenal.undead_leggings": "Leggings of The Undeads",
+  "item.godsarsenal.undead_boots": "Boots of The Undeads",
+  "item.godsarsenal.undead_blade": "Blade of The Undeads",
+  "item.godsarsenal.mjolnir": "Mjölnir"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "godsarsenal:item/raw_cobalt"
+    "layer0": "godsarsenal:item/undead_helmet"
   }
 }

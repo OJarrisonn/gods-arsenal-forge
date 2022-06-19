@@ -41,6 +41,12 @@ public class UndeadArmorItem extends ArmorItem {
             if (!player.hasEffect(MobEffects.ABSORPTION)) {
                 player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 160, 4, false, false));
             }
+
+            if (!player.hasEffect(MobEffects.HEALTH_BOOST)) {
+                player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 999999*20, 9, false, false));
+            }
+        } else {
+            player.removeEffect(MobEffects.HEALTH_BOOST);
         }
     }
 

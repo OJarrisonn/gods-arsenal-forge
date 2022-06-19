@@ -20,7 +20,7 @@ public class ModArmorItem extends ArmorItem {
     private static final List<MobEffectInstance> ANCIENT_WOOD_EFFECTS = new ArrayList<>();
 
     static {
-        ANCIENT_WOOD_EFFECTS.add(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false));
+        ANCIENT_WOOD_EFFECTS.add(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2, false, false));
         ANCIENT_WOOD_EFFECTS.add(new MobEffectInstance(MobEffects.REGENERATION, 100, 4, false, false));
     }
 

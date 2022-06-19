@@ -13,16 +13,19 @@ import java.util.function.Supplier;
 import static com.ojarrisonn.godsarsenal.GodsArsenal.MOD_ID;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    UNDEAD("undead", 100, new int[]{5, 8, 10, 5}, 0, SoundEvents.ARMOR_EQUIP_LEATHER, 4.0F, 0.1F, () -> {
+    UNDEAD("undead", 100, new int[]{7, 9, 12, 7}, 0, SoundEvents.ARMOR_EQUIP_LEATHER, 4.0F, 0.1F, () -> {
         return Ingredient.of(Items.NETHER_STAR);
     }),
     WIND_SPIRIT("wind_spirit", 50, new int[]{1,3,4,1}, 0, SoundEvents.ARMOR_EQUIP_IRON, 0F, 0F, () -> {
         return Ingredient.of(Items.NETHER_STAR);
     }),
-    GUARDIAN("guardian", 50, new int[]{1,3,4,1}, 0, SoundEvents.ARMOR_EQUIP_LEATHER, 0F, 0F, () -> {
+    GUARDIAN("guardian", 50, new int[]{2,3,4,2}, 0, SoundEvents.ARMOR_EQUIP_LEATHER, 0F, 0F, () -> {
         return Ingredient.of(Items.NETHER_STAR);
     }),
-    ANCIENT_WOOD("ancient_wood", 500, new int[]{8, 10, 12, 8}, 0, SoundEvents.WOOD_PLACE, 5.0f, 1f, () -> {
+    ANCIENT_WOOD("ancient_wood", 500, new int[]{10, 12, 16, 10}, 0, SoundEvents.WOOD_PLACE, 5.0f, 1f, () -> {
+        return Ingredient.of(Items.NETHER_STAR);
+    }),
+    AUREA("aurea", 1000, new int[]{1, 2, 3, 1}, 0, SoundEvents.AMETHYST_BLOCK_PLACE, 1.0f, 2f, () -> {
         return Ingredient.of(Items.NETHER_STAR);
     });
 

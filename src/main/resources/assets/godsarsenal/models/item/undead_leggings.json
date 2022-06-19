@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "godsarsenal:item/undead_leggings"
+  }
+}
